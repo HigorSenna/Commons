@@ -12,9 +12,9 @@ public abstract class GenericoDAO<T, P> implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private static final String SELECT_ALL = "FROM %s o";
-	private static final String INSERT = "INSERT";
-	private static final String UPDATE = "UPDATE";
-	private static final String DELETE = "DELETE";
+	private static final int INSERT = 1;
+	private static final int UPDATE = 2;
+	private static final int DELETE = 3;
 	
 	@PersistenceContext
 	private EntityManager entityManager;
@@ -31,7 +31,7 @@ public abstract class GenericoDAO<T, P> implements Serializable{
 		executarComando(DELETE, entidade);
 	}
 	
-	private void executarComando(String comando,T entidade) throws Exception{
+	private void executarComando(int comando,T entidade) throws Exception{
 		
 		switch (comando) {
 			case INSERT:
