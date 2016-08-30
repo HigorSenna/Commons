@@ -3,4 +3,5 @@
 .project
 /.sttings/
 .settings/*
+/target/**/*
 /target/
